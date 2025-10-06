@@ -1,140 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronics Engineering Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Santos | Electronics Engineer</title>
+  <style>
+    :root {
+     --primary: #42B3AF; /* light blue */
+--primary-dark: #9C42B3; /* violet*/
+      --bg: #f8f9fa;
+      --text: #222;
+      --card: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --card: #1e1e1e;
+      --shadow: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ===== Header Section ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 80px;
+      position: relative;
+    }
+
+    .header-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .toggle-btn, .download-btn {
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .toggle-btn:hover, .download-btn:hover {
+      background: var(--primary-dark);
+      color: #fff;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #fff;
+      margin: 0 auto 20px;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+      background: var(--card);
+      box-shadow: 0 2px 5px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 10px 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .about, .skills, .projects, .education, .contact {
+      background: var(--card);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--shadow);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    /* ===== Skills Grid ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .skill {
+      background: #e9ecef;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    body.dark .skill {
+      background: #2a2a2a;
+      color: #ddd;
+    }
+
+    /* ===== Projects ===== */
+    .projects .project {
+      margin-bottom: 20px;
+    }
+
+    .projects .project h3 {
+      color: var(--primary);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      nav ul { flex-direction: column; }
+      .header-buttons {
+        flex-direction: column;
+        top: 10px;
+        right: 10px;
+      }
+      .toggle-btn, .download-btn {
+        padding: 6px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-    
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Your Name or Company</h1>
-                <p>Electronics & Communication Engineering</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="header-buttons">
+      <a href="LouSantos_CV.pdf" class="download-btn" download>⬇️ Download CV</a>
+      <button class="toggle-btn" id="modeToggle">🌙 Dark Mode</button>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Innovative Electronics Engineering Solutions</h2>
-            <p>Bringing cutting-edge designs to life with precision and expertise.</p>
-            <a href="#projects" class="cta-button">Explore My Work</a>
-        </div>
-    </section>
+    <div class="profile-photo">
+      <!-- Replace with your own photo -->
+      <img src="https://via.placeholder.com/150" alt="Lou Santos">
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am an Electronics and Communication Engineer with expertise in system design, embedded systems, and communication technology. With a strong background in electronics, I focus on solving real-world problems through innovative solutions and practical engineering approaches.</p>
-            <div class="skills">
-                <h3>My Skills & Expertise:</h3>
-                <ul>
-                    <li>Circuit Design & Simulation</li>
-                    <li>Signal Processing</li>
-                    <li>Embedded Systems (Arduino, Raspberry Pi)</li>
-                    <li>Communication Systems (4G, 5G)</li>
-                    <li>IoT & Smart Devices</li>
-                    <li>RF Engineering</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <h1>Lou Santos</h1>
+    <p>Electronics Engineer | Embedded Systems | PCB Design</p>
+  </header>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Services</h2>
-            <div class="service-item">
-                <h3>Design & Prototyping</h3>
-                <p>Designing and testing high-performance circuits, from concept to prototype.</p>
-            </div>
-            <div class="service-item">
-                <h3>Consulting</h3>
-                <p>Providing expert consultation on system architecture and optimization.</p>
-            </div>
-            <div class="service-item">
-                <h3>Embedded Systems</h3>
-                <p>Developing embedded systems and IoT solutions using popular microcontrollers like Arduino and Raspberry Pi.</p>
-            </div>
-        </div>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>5G Communication System Design</h3>
-                <p>This project focused on designing the RF circuit and signal processing for a 5G communication system...</p>
-                <a href="#">Learn More</a>
-            </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>IoT Smart Home System</h3>
-                <p>Developed a smart home system utilizing IoT sensors and remote control via a mobile app...</p>
-                <a href="#">Learn More</a>
-            </div>
-        </div>
-    </section>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am an Electronics Engineer with a passion for designing, testing, and implementing embedded systems and hardware solutions. 
+      Experienced in PCB design, microcontroller programming, and circuit simulation.
+    </p>
+  </section>
 
-    <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <h2>Blog</h2>
-            <p>Stay updated with the latest trends in electronics and communication technology:</p>
-            <ul>
-                <li><a href="#">How 5G is Transforming Communication Networks</a></li>
-                <li><a href="#">Designing Robust IoT Systems for Real-World Applications</a></li>
-                <li><a href="#">Understanding the Basics of Signal Processing</a></li>
-            </ul>
-        </div>
-    </section>
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Arduino / ESP32</div>
+      <div class="skill">C / C++</div>
+      <div class="skill">MATLAB</div>
+      <div class="skill">Proteus / Multisim</div>
+      <div class="skill">Altium Designer</div>
+      <div class="skill">AutoCAD Electrical</div>
+      <div class="skill">Soldering & Testing</div>
+      <div class="skill">IoT Systems</div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form>
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Smart Home Automation System</h3>
+      <p>Developed a Wi-Fi based smart home system using ESP8266 and Blynk app for remote control of appliances.</p>
+    </div>
+    <div class="project">
+      <h3>Line Follower Robot</h3>
+      <p>Designed and programmed a line-following robot using IR sensors and Arduino for path navigation.</p>
+    </div>
+  </section>
 
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <p><strong>Bachelor of Science in Electronics Engineering</strong><br>
+       XYZ University, 2020 – 2025</p>
+  </section>
 
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" required></textarea>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:lousantos@email.com">lousantos@email.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/lousantos</a></p>
+    <p>GitHub: <a href="#">github.com/lousantos</a></p>
+  </section>
 
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+  <footer>
+    <p>© 2025 Lou Santos | Electronics Engineer</p>
+  </footer>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Electronics Engineering | All Rights Reserved</p>
-            <div class="social-links">
-                <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">ResearchGate</a>
-            </div>
-        </div>
-    </footer>
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
 
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('modeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️ Light Mode';
+      } else {
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
 </body>
 </html>
