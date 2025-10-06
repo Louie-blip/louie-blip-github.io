@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louis Santos | Electronics Engineer</title>
+  <title>Lou Santos | Electronics Engineer</title>
+
+  <!-- ✅ Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     :root {
-     --primary: #42B3AF; /* light blue */
---primary-dark: #9C42B3; /* violet*/
-      --bg: #f8f9fa;
+      --primary: #007bff;       /* main blue accent */
+      --primary-dark: #0056b3;  /* darker shade */
+      --bg: #f4f7fb;            /* light background */
       --text: #222;
       --card: #fff;
       --shadow: rgba(0, 0, 0, 0.1);
     }
-
     body.dark {
-      --bg: #121212;
-      --text: #e0e0e0;
-      --card: #1e1e1e;
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --card: #1e293b;
       --shadow: rgba(255, 255, 255, 0.05);
     }
 
@@ -35,7 +38,7 @@
       line-height: 1.6;
     }
 
-    /* ===== Header Section ===== */
+    /* ===== Header ===== */
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
@@ -95,7 +98,7 @@
       opacity: 0.9;
     }
 
-    /* ===== Navbar ===== */
+    /* ===== Nav ===== */
     nav {
       background: var(--card);
       box-shadow: 0 2px 5px var(--shadow);
@@ -147,6 +150,13 @@
       margin-bottom: 40px;
     }
 
+    /* ===== About Section ===== */
+    .about img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
     /* ===== Skills Grid ===== */
     .skills-grid {
       display: grid;
@@ -167,15 +177,6 @@
       color: #ddd;
     }
 
-    /* ===== Projects ===== */
-    .projects .project {
-      margin-bottom: 20px;
-    }
-
-    .projects .project h3 {
-      color: var(--primary);
-    }
-
     /* ===== Footer ===== */
     footer {
       text-align: center;
@@ -184,7 +185,6 @@
       color: #fff;
     }
 
-    /* ===== Responsive ===== */
     @media (max-width: 768px) {
       header h1 { font-size: 2em; }
       nav ul { flex-direction: column; }
@@ -193,26 +193,25 @@
         top: 10px;
         right: 10px;
       }
-      .toggle-btn, .download-btn {
-        padding: 6px 12px;
-      }
+      .toggle-btn, .download-btn { padding: 6px 12px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-buttons">
-      <a href="LouSantos_CV.pdf" class="download-btn" download>⬇️ Download CV</a>
+      <a href="https://example.com" target="_blank" class="download-btn">
+        🌐 Visit My Website
+      </a>
       <button class="toggle-btn" id="modeToggle">🌙 Dark Mode</button>
     </div>
 
     <div class="profile-photo">
-      <!-- Replace with your own photo -->
       <img src="https://via.placeholder.com/150" alt="Lou Santos">
     </div>
 
     <h1>Lou Santos</h1>
-    <p>Electronics Engineer | Embedded Systems | PCB Design</p>
+    <p>⚡ Electronics Engineer | 🤖 Embedded Systems | 💡 PCB Design</p>
   </header>
 
   <nav>
@@ -226,50 +225,50 @@
   </nav>
 
   <section id="about" class="about">
-    <h2>About Me</h2>
+    <h2>👋 About Me</h2>
+    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Engineer at work" width="250">
     <p>
-      I am an Electronics Engineer with a passion for designing, testing, and implementing embedded systems and hardware solutions. 
-      Experienced in PCB design, microcontroller programming, and circuit simulation.
+      I am an Electronics Engineer with a passion for designing, testing, and implementing embedded systems 
+      and hardware solutions. I love turning circuit ideas into functional, real-world applications.
     </p>
   </section>
 
   <section id="skills" class="skills">
-    <h2>Technical Skills</h2>
+    <h2>⚙️ Technical Skills</h2>
     <div class="skills-grid">
-      <div class="skill">Arduino / ESP32</div>
-      <div class="skill">C / C++</div>
-      <div class="skill">MATLAB</div>
-      <div class="skill">Proteus / Multisim</div>
-      <div class="skill">Altium Designer</div>
-      <div class="skill">AutoCAD Electrical</div>
-      <div class="skill">Soldering & Testing</div>
-      <div class="skill">IoT Systems</div>
+      <div class="skill"><i class="fa-solid fa-microchip"></i> Arduino / ESP32</div>
+      <div class="skill"><i class="fa-solid fa-code"></i> C / C++</div>
+      <div class="skill"><i class="fa-solid fa-wave-square"></i> MATLAB</div>
+      <div class="skill"><i class="fa-solid fa-diagram-project"></i> Proteus / Multisim</div>
+      <div class="skill"><i class="fa-solid fa-cubes"></i> Altium Designer</div>
+      <div class="skill"><i class="fa-solid fa-drafting-compass"></i> AutoCAD Electrical</div>
+      <div class="skill"><i class="fa-solid fa-screwdriver-wrench"></i> Testing & Soldering</div>
+      <div class="skill"><i class="fa-solid fa-satellite-dish"></i> IoT Systems</div>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <h2>Projects</h2>
+    <h2>🧠 Projects</h2>
     <div class="project">
-      <h3>Smart Home Automation System</h3>
-      <p>Developed a Wi-Fi based smart home system using ESP8266 and Blynk app for remote control of appliances.</p>
+      <h3>Smart Home Automation</h3>
+      <p><i class="fa-solid fa-house-signal"></i> Wi-Fi based home automation system using ESP8266 and Blynk app.</p>
     </div>
     <div class="project">
       <h3>Line Follower Robot</h3>
-      <p>Designed and programmed a line-following robot using IR sensors and Arduino for path navigation.</p>
+      <p><i class="fa-solid fa-robot"></i> Arduino-powered robot designed for line tracking with IR sensors.</p>
     </div>
   </section>
 
   <section id="education" class="education">
-    <h2>Education</h2>
-    <p><strong>Bachelor of Science in Electronics Engineering</strong><br>
-       XYZ University, 2020 – 2025</p>
+    <h2>🎓 Education</h2>
+    <p><strong>Bachelor of Science in Electronics Engineering</strong><br>XYZ University, 2020–2025</p>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:lousantos@email.com">lousantos@email.com</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/lousantos</a></p>
-    <p>GitHub: <a href="#">github.com/lousantos</a></p>
+    <h2>📬 Contact</h2>
+    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:lousantos@email.com">lousantos@email.com</a></p>
+    <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/lousantos" target="_blank">linkedin.com/in/lousantos</a></p>
+    <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/lousantos" target="_blank">github.com/lousantos</a></p>
   </section>
 
   <footer>
@@ -277,24 +276,21 @@
   </footer>
 
   <script>
-    // Smooth scroll
+    // Smooth scrolling
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // Dark Mode Toggle
+    // Dark mode toggle
     const toggleBtn = document.getElementById('modeToggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-      if (document.body.classList.contains('dark')) {
-        toggleBtn.textContent = '☀️ Light Mode';
-      } else {
-        toggleBtn.textContent = '🌙 Dark Mode';
-      }
+      toggleBtn.textContent = document.body.classList.contains('dark')
+        ? '☀️ Light Mode'
+        : '🌙 Dark Mode';
     });
   </script>
 </body>
