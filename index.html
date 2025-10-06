@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lou Santos | Electronics Engineer</title>
 
-  <!-- ✅ Font Awesome (for icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- ✅ Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #007bff;       /* main blue accent */
-      --primary-dark: #0056b3;  /* darker shade */
-      --bg: #f4f7fb;            /* light background */
+      --primary: #007bff;
+      --primary-dark: #0056b3;
+      --bg: #f4f7fb;
       --text: #222;
       --card: #fff;
       --shadow: rgba(0, 0, 0, 0.1);
     }
+
     body.dark {
       --bg: #0f172a;
       --text: #e2e8f0;
@@ -134,12 +138,21 @@
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
       text-align: center;
       color: var(--primary);
       margin-bottom: 30px;
+      font-size: 1.8em;
     }
 
     .about, .skills, .projects, .education, .contact {
@@ -150,11 +163,12 @@
       margin-bottom: 40px;
     }
 
-    /* ===== About Section ===== */
     .about img {
       display: block;
       margin: 20px auto;
-      border-radius: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px var(--shadow);
+      max-width: 250px;
     }
 
     /* ===== Skills Grid ===== */
@@ -200,8 +214,8 @@
 <body>
   <header>
     <div class="header-buttons">
-      <a href="https://example.com" target="_blank" class="download-btn">
-        🌐 Visit My Website
+      <a href="cv.pdf" download class="download-btn">
+        📄 Download CV
       </a>
       <button class="toggle-btn" id="modeToggle">🌙 Dark Mode</button>
     </div>
@@ -220,13 +234,14 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Job Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <section id="about" class="about">
-    <h2>👋 About Me</h2>
-    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Engineer at work" width="250">
+    <h2>👨 About Me 👨</h2>
+    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Engineer at work">
     <p>
       I am an Electronics Engineer with a passion for designing, testing, and implementing embedded systems 
       and hardware solutions. I love turning circuit ideas into functional, real-world applications.
@@ -234,7 +249,7 @@
   </section>
 
   <section id="skills" class="skills">
-    <h2>⚙️ Technical Skills</h2>
+    <h2>⚙️ Technical Skills ⚙️</h2>
     <div class="skills-grid">
       <div class="skill"><i class="fa-solid fa-microchip"></i> Arduino / ESP32</div>
       <div class="skill"><i class="fa-solid fa-code"></i> C / C++</div>
@@ -248,24 +263,29 @@
   </section>
 
   <section id="projects" class="projects">
-    <h2>🧠 Projects</h2>
+    <h2>🧠 Projects 🧠</h2>
     <div class="project">
-      <h3>Smart Home Automation</h3>
-      <p><i class="fa-solid fa-house-signal"></i> Wi-Fi based home automation system using ESP8266 and Blynk app.</p>
+      <h3><i class="fa-solid fa-house-signal"></i> Smart Home Automation</h3>
+      <p>Wi-Fi based home automation system using ESP8266 and Blynk app.</p>
     </div>
     <div class="project">
-      <h3>Line Follower Robot</h3>
-      <p><i class="fa-solid fa-robot"></i> Arduino-powered robot designed for line tracking with IR sensors.</p>
+      <h3><i class="fa-solid fa-robot"></i> Line Follower Robot</h3>
+      <p>Arduino-powered robot designed for line tracking with IR sensors.</p>
     </div>
   </section>
 
   <section id="education" class="education">
-    <h2>🎓 Education</h2>
+    <h2>🎓 Education 🎓</h2>
     <p><strong>Bachelor of Science in Electronics Engineering</strong><br>XYZ University, 2020–2025</p>
   </section>
 
+  <section id="experience" class="experience">
+    <h2>💼 Job Experience 💼</h2>
+    <p><strong>RJ Broadcasting</strong><br>Broadcast Technician, 2025–Present</p>
+  </section>
+
   <section id="contact" class="contact">
-    <h2>📬 Contact</h2>
+    <h2>📬 Contact 📬</h2>
     <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:lousantos@email.com">lousantos@email.com</a></p>
     <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/lousantos" target="_blank">linkedin.com/in/lousantos</a></p>
     <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/lousantos" target="_blank">github.com/lousantos</a></p>
@@ -292,6 +312,18 @@
         ? '☀️ Light Mode'
         : '🌙 Dark Mode';
     });
+
+    // Fade-in on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
