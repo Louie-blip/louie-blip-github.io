@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lou Santos | Electronics Engineer</title>
+  <title>Louis Santos | Electronics Engineer</title>
   <style>
     :root {
       --primary: #0d6efd;
@@ -40,8 +40,34 @@
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
       text-align: center;
-      padding: 80px 20px 60px;
+      padding: 100px 20px 80px;
       position: relative;
+    }
+
+    .header-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .toggle-btn, .download-btn {
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .toggle-btn:hover, .download-btn:hover {
+      background: var(--primary-dark);
+      color: #fff;
     }
 
     .profile-photo {
@@ -67,26 +93,6 @@
     header p {
       font-size: 1.1em;
       opacity: 0.9;
-    }
-
-    /* ===== Dark Mode Toggle Button ===== */
-    .toggle-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #fff;
-      color: var(--primary);
-      border: none;
-      border-radius: 20px;
-      padding: 8px 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .toggle-btn:hover {
-      background: var(--primary-dark);
-      color: #fff;
     }
 
     /* ===== Navbar ===== */
@@ -182,9 +188,12 @@
     @media (max-width: 768px) {
       header h1 { font-size: 2em; }
       nav ul { flex-direction: column; }
-      .toggle-btn {
+      .header-buttons {
+        flex-direction: column;
         top: 10px;
         right: 10px;
+      }
+      .toggle-btn, .download-btn {
         padding: 6px 12px;
       }
     }
@@ -192,11 +201,16 @@
 </head>
 <body>
   <header>
-    <button class="toggle-btn" id="modeToggle">🌙 Dark Mode</button>
+    <div class="header-buttons">
+      <a href="LouSantos_CV.pdf" class="download-btn" download>⬇️ Download CV</a>
+      <button class="toggle-btn" id="modeToggle">🌙 Dark Mode</button>
+    </div>
+
     <div class="profile-photo">
-      <!-- Replace this image URL with your own -->
+      <!-- Replace with your own photo -->
       <img src="https://via.placeholder.com/150" alt="Lou Santos">
     </div>
+
     <h1>Lou Santos</h1>
     <p>Electronics Engineer | Embedded Systems | PCB Design</p>
   </header>
